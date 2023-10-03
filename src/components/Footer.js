@@ -12,7 +12,7 @@ export const Footer = () => {
         style={{ width: "80%" }}
       >
         <CDBBox display="flex" alignItems="center">
-          <span className="ms-4 h5 mb-0 font-weight-bold text-danger mx-4">
+          <span className="ms-0 h5 mb-0 font-weight-bold text-danger mx-4">
             <strong>MovieList</strong>
           </span>
         </CDBBox>

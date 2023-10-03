@@ -24,9 +24,9 @@ const NavbarComponent = ({ onSearchResults }) => {
     <>
       <Navbar className="navbar" >
         <Container fluid>
-          <Navbar.Brand className="logo text-danger mx-4" as={Link} to={"/"}>
+          <Navbar.Brand className="logo text-danger mx-4" as={Link} to={"/"} >
             <h2>
-              <strong>MovieList</strong>
+              <strong style={{marginLeft: "4.3rem"}}>MovieList</strong>
             </h2>
           </Navbar.Brand>
           <Form inline>
@@ -49,7 +49,7 @@ const NavbarComponent = ({ onSearchResults }) => {
               </Button>
             </NavLink>
             <NavLink>
-              <Button variant="danger" className="register">
+              <Button variant="danger" className="register" style={{marginRight: "5.1rem"}}>
                 Register
               </Button>
             </NavLink>
