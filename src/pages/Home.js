@@ -4,6 +4,8 @@ import { Footer } from "../components/Footer";
 import { Link } from "react-router-dom";
 import HomeCarousel from "../components/Carousel";
 import NavbarComponent from "../components/Navbar";
+import { ArrowRight } from "react-bootstrap-icons";
+import { Row, Col } from "react-bootstrap";
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -16,7 +18,8 @@ const Home = () => {
   }, []);
 
   const PopularMovieList = () => {
-    const moviesToDisplay = searchResults.length > 0 ? searchResults : popularMovies;
+    const moviesToDisplay =
+      searchResults.length > 0 ? searchResults : popularMovies;
 
     return moviesToDisplay.map((movie, i) => {
       return (
@@ -45,11 +48,19 @@ const Home = () => {
       <HomeCarousel />
 
       <div className="App">
-        <header className="App-header">
-          <h3 className="text mt-4">
-            {" "}
-            <strong>Popular Movies</strong>
-          </h3>
+        <header className="App-header d-flex">
+          <Row>
+            <Col md={6}>
+              <h3 className="text-start mt-4 mx-5"> Popular Movies</h3>
+            </Col>
+            <Col md={6}>
+              <h6 className="text-end mt-4 mx-5 align-content-center text-danger">
+                See All Movies
+                <ArrowRight className="icon-arrow"></ArrowRight>
+              </h6>
+            </Col>
+          </Row>
+
           <br />
           <div className="Movie-container">
             <PopularMovieList />
