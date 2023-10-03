@@ -9,7 +9,7 @@ export const Footer = () => {
         justifyContent="between"
         alignItems="center"
         className="mx-auto py-4 flex-wrap"
-        style={{ width: "80%" }}
+        style={{ width: "80%", height: "72px" }}
       >
         <CDBBox display="flex" alignItems="center">
           <span className="ms-0 h5 mb-0 font-weight-bold text-danger mx-4">
