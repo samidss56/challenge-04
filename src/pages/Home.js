@@ -51,10 +51,15 @@ const Home = () => {
         <header className="App-header d-flex">
           <Row>
             <Col md={6}>
-              <h3 className="text-start mt-4" style={{marginLeft: "6.5rem"}}> Popular Movies</h3>
+              <h3 className="text-start mt-4" style={{ marginLeft: "6.5rem", color: "black" }}>
+                <strong>Popular Movies</strong>
+              </h3>
             </Col>
             <Col md={6}>
-              <h6 className="text-end mt-4 align-content-center text-danger" style={{marginRight: "6.5rem"}}>
+              <h6
+                className="text-end mt-4 align-content-center text-danger"
+                style={{ marginRight: "6.5rem" }}
+              >
                 See All Movies
                 <ArrowRight className="icon-arrow"></ArrowRight>
               </h6>

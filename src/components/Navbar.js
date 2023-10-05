@@ -22,11 +22,11 @@ const NavbarComponent = ({ onSearchResults }) => {
 
   return (
     <>
-      <Navbar className="navbar" >
+      <Navbar className="navbar" bg="trasnparent navbar-expand-lg fixed-top p-2">
         <Container fluid>
-          <Navbar.Brand className="logo text-danger mx-4" as={Link} to={"/"} >
+          <Navbar.Brand className="logo text-danger mx-4" as={Link} to={"/"}>
             <h2>
-              <strong style={{marginLeft: "4.3rem"}}>MovieList</strong>
+              <strong style={{ marginLeft: "3.7rem" }}>MovieList</strong>
             </h2>
           </Navbar.Brand>
           <Form inline>
@@ -38,6 +38,8 @@ const NavbarComponent = ({ onSearchResults }) => {
                   className=" Movie-search mr-sm-2"
                   onChange={({ target }) => search(target.value)}
                   variant="outline-danger"
+                  style={{background: "transparent", color: "white"}}
+                  color="white"
                 ></Form.Control>
               </Col>
             </Row>
@@ -49,7 +51,11 @@ const NavbarComponent = ({ onSearchResults }) => {
               </Button>
             </NavLink>
             <NavLink>
-              <Button variant="danger" className="register" style={{marginRight: "5.1rem"}}>
+              <Button
+                variant="danger"
+                className="register"
+                style={{ marginRight: "4.8rem" }}
+              >
                 Register
               </Button>
             </NavLink>
