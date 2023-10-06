@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { Button, Carousel } from "react-bootstrap";
 import { StarFill } from "react-bootstrap-icons";
@@ -11,7 +11,12 @@ const apiKey = process.env.REACT_APP_APIKEY;
 
 function Detail() {
   const [detailMovie, setDetailMovie] = useState({});
+  const [searchResults, setSearchResults] = useState([]);
   const params = useParams();
+
+  const handleSearchResults = (results) => {
+    setSearchResults(results);
+  };
 
   useEffect(() => {
     async function getDetailMovie() {
@@ -30,7 +35,7 @@ function Detail() {
 
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent onSearchResults={handleSearchResults} />
 
       <Carousel className="carousel-detail" controls={false}>
         <Carousel.Item>
@@ -75,6 +80,28 @@ function Detail() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+
+      {searchResults.length > 3 && (
+        <>
+          <h3 style={{ marginLeft: "6.5rem", marginTop: "1rem" }}>
+            <strong>Search Movie</strong>{" "}
+          </h3>
+          <div className="Movie-container mx-4 my-4">
+            {searchResults.map((movie, i) => (
+              <Link to={`/detail/${movie.id}`} key={i}>
+                <div className="Movie-wrapper mb-4 mx-1" key={i}>
+                  <img
+                    className="Movie-image"
+                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                    alt=""
+                    style={{ width: "200px", borderRadius: "10px" }}
+                  />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
 
       <Footer />
     </>
